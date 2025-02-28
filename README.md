@@ -3,7 +3,7 @@
 A new Flutter Boilerplate.
 
 ## Setup Env file
-- Create .env_prod , env_stag, env_dev file on root folder and update content.
+- Create .env_prod , .env_stag, .env_dev file on root folder and update content.
 Content .env sample:
 BASE_URL=https://api.test
 SECRET_KEY=xxxxxxx
