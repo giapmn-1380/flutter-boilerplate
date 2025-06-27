@@ -32,3 +32,26 @@ linter:
     # prefer_single_quotes: true  # Uncomment to enable the `prefer_single_quotes` rule
 # Additional information about this file can be found at
 # https://dart.dev/guides/language/analysis-options
+
+custom_lint:
+  rules:
+    - missing_provider_scopeAdd commentMore actions
+    - missing_ref_read
+    - prefer_final_provider_parameters
+    - avoid_manual_providers_as_generated_provider
+    - avoid_public_notifier_classes
+    - prefer_provider_parameters
+    - prefer_async_notifier
+    - unnecessary_provider_exists
+    - provider_dependencies
+    - scoped_providers_should_specify_dependencies
+    - avoid_manual_providers_as_generated_provider_dependency
+    - avoid_build_context_in_providers
+    - avoid_public_notifier_properties
+    - unsupported_provider_value
+    - functional_ref
+    - notifier_extends
+    - avoid_ref_inside_state_dispose
+    - notifier_build
+    - async_value_nullable_patttern
+    - protected_notifier_properties
