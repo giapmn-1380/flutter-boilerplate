@@ -87,6 +87,7 @@ flutter:
     - .env_prod
     - .env_dev
     - .env_stag
+    - assets/image/
     - assets/lang/
     - assets/svgs/
   # An image asset can refer to one or more resolution-specific "variants", see

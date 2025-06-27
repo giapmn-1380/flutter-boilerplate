@@ -11,7 +11,11 @@ class PSplash extends StatelessWidget {
   Widget build(BuildContext context) {
     return ContainerErrorHandling(
       child: Center(
-        child: Assets.svgs.icLaunch.svg(),
+        child: Assets.image.icLauncher.image(
+          width: 100,
+          height: 100,
+          fit: BoxFit.cover,
+        ),
       ),
     );
   }

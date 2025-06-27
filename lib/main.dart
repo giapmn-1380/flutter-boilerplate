@@ -15,9 +15,13 @@ void main() async {
 
   runApp(ProviderScope(
     child: EasyLocalization(
-      supportedLocales: const [Locale('ja', 'JP')],
+      supportedLocales: const [
+        Locale('ja', 'JP'),
+        Locale('en', 'US'),
+        Locale('vi', 'VN'),
+      ],
       path: "assets/lang",
-      fallbackLocale: const Locale("ja", "JP"),
+      fallbackLocale: const Locale("en", "US"),
       child: const MyApp(),
     ),
   ));

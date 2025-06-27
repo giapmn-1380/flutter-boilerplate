@@ -12,14 +12,30 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart' as _svg;
 import 'package:vector_graphics/vector_graphics.dart' as _vg;
 
+class $AssetsImageGen {
+  const $AssetsImageGen();
+
+  /// File path: assets/image/ic_launcher.png
+  AssetGenImage get icLauncher => const AssetGenImage('assets/image/ic_launcher.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [icLauncher];
+}
+
 class $AssetsLangGen {
   const $AssetsLangGen();
+
+  /// File path: assets/lang/en-US.json
+  String get enUS => 'assets/lang/en-US.json';
 
   /// File path: assets/lang/ja-JP.json
   String get jaJP => 'assets/lang/ja-JP.json';
 
+  /// File path: assets/lang/vi-VN.json
+  String get viVN => 'assets/lang/vi-VN.json';
+
   /// List of all assets
-  List<String> get values => [jaJP];
+  List<String> get values => [enUS, jaJP, viVN];
 }
 
 class $AssetsSvgsGen {
@@ -38,11 +54,93 @@ class Assets {
   static const String aEnvDev = '.env_dev';
   static const String aEnvProd = '.env_prod';
   static const String aEnvStag = '.env_stag';
+  static const $AssetsImageGen image = $AssetsImageGen();
   static const $AssetsLangGen lang = $AssetsLangGen();
   static const $AssetsSvgsGen svgs = $AssetsSvgsGen();
 
   /// List of all assets
   static List<String> get values => [aEnvDev, aEnvProd, aEnvStag];
+}
+
+class AssetGenImage {
+  const AssetGenImage(
+    this._assetName, {
+    this.size,
+    this.flavors = const {},
+  });
+
+  final String _assetName;
+
+  final Size? size;
+  final Set<String> flavors;
+
+  Image image({
+    Key? key,
+    AssetBundle? bundle,
+    ImageFrameBuilder? frameBuilder,
+    ImageErrorWidgetBuilder? errorBuilder,
+    String? semanticLabel,
+    bool excludeFromSemantics = false,
+    double? scale,
+    double? width,
+    double? height,
+    Color? color,
+    Animation<double>? opacity,
+    BlendMode? colorBlendMode,
+    BoxFit? fit,
+    AlignmentGeometry alignment = Alignment.center,
+    ImageRepeat repeat = ImageRepeat.noRepeat,
+    Rect? centerSlice,
+    bool matchTextDirection = false,
+    bool gaplessPlayback = true,
+    bool isAntiAlias = false,
+    String? package,
+    FilterQuality filterQuality = FilterQuality.low,
+    int? cacheWidth,
+    int? cacheHeight,
+  }) {
+    return Image.asset(
+      _assetName,
+      key: key,
+      bundle: bundle,
+      frameBuilder: frameBuilder,
+      errorBuilder: errorBuilder,
+      semanticLabel: semanticLabel,
+      excludeFromSemantics: excludeFromSemantics,
+      scale: scale,
+      width: width,
+      height: height,
+      color: color,
+      opacity: opacity,
+      colorBlendMode: colorBlendMode,
+      fit: fit,
+      alignment: alignment,
+      repeat: repeat,
+      centerSlice: centerSlice,
+      matchTextDirection: matchTextDirection,
+      gaplessPlayback: gaplessPlayback,
+      isAntiAlias: isAntiAlias,
+      package: package,
+      filterQuality: filterQuality,
+      cacheWidth: cacheWidth,
+      cacheHeight: cacheHeight,
+    );
+  }
+
+  ImageProvider provider({
+    AssetBundle? bundle,
+    String? package,
+  }) {
+    return AssetImage(
+      _assetName,
+      bundle: bundle,
+      package: package,
+    );
+  }
+
+  String get path => _assetName;
+
+  String get keyName => _assetName;
 }
 
 class SvgGenImage {
