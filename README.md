@@ -96,14 +96,14 @@ Go to website:
 
 - https://docs.flutter.dev/get-started/install
 
-Version: 3.22.0
+Version: 3.32.4
 Example: flutter --version
 
 ```
-Flutter 3.22.0 • channel stable • https://github.com/flutter/flutter.git
-Framework • revision 5dcb86f68f (10 months ago) • 2024-05-09 07:39:20 -0500
-Engine • revision f6344b75dc
-Tools • Dart 3.4.0 • DevTools 2.34.3
+Flutter 3.32.4 • channel [user-branch] • unknown source
+Framework • revision 6fba2447e9 (2 weeks ago) • 2025-06-12 19:03:56 -0700
+Engine • revision 8cd19e509d (2 weeks ago) • 2025-06-12 16:30:12 -0700
+Tools • Dart 3.8.1 • DevTools 2.45.1
 ```
 
 ### Install CocoaPods 1.16.2 (https://cocoapods.org/)
