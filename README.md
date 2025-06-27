@@ -129,14 +129,19 @@ Go to website
 - https://developer.android.com/studio/archive
 
 #### NOTE: Java version 11 or 17
+
 If your JAVA_HOME is set properly, you can use flutter config --jdk-dir=$JAVA_HOME to set your JAVA_HOME as the java directory for Android studio.
+
 ```
 flutter config --jdk-dir=$JAVA_HOME
 ```
+
 If the java path is something else, you can configure JAVA_HOME and then follow the above step OR you can run the following command:
+
 ```
 flutter config --jdk-dir=PATH_TO_JAVA
 ```
+
 ### XCode Version 16.2 (16C5032a)
 
 - Go to App Store on Mac OS to download.
@@ -196,13 +201,13 @@ flutter run --flavor prod --dart-define=FLAVOR=prod
 See video at: /docs/run_with_android_studio.mov
 
 ### Run with VSCode
+
 At tab "RUN AND DEBUG", select environment and run.
 
 ![](/docs/run_via_vscode.png)
 
-
-
 # 3. Build for Dev
+
 ### Preparing files
 
 - Prepare .env_dev
@@ -213,30 +218,42 @@ At tab "RUN AND DEBUG", select environment and run.
    Ex: Provisioning Profiles, Team ID.
 
 2. Open pubspec.yaml to update info:
-  **version: 1.0.0+1**
-  In version: 1.0.0+1,
-    •	1.0.0 is the VersionName (the user-facing version).
-    •	1 is the VersionCode (an internal build number, which must increase with each release).
+   **version: 1.0.0+1**
+   In version: 1.0.0+1,
+   • 1.0.0 is the VersionName (the user-facing version).
+   • 1 is the VersionCode (an internal build number, which must increase with each release).
 
 ### Run to get IPA for iOS
+
+Replace `${VersionName}` and `${VersionCode}`:
+
 ```
 	flutter clean
 	flutter pub get
-	flutter build ios --release --flavor dev --dart-define=FLAVOR=dev --target lib/main.dart
-	flutter build ipa --release --export-options-plist=ios/ExportOptions_dev.plist --flavor dev --dart-define=FLAVOR=dev --target lib/main.dart
+	flutter build ipa --release --build-name=${VersionName} --build-number=${VersionCode} --export-options-plist=ios/ExportOptions_dev.plist --flavor dev --dart-define=FLAVOR=dev --target lib/main.dart
 ```
+
+Example:
+
+```
+	flutter build ipa --release --build-name=1.0.0 --build-number=999 --export-options-plist=ios/ExportOptions_dev.plist --flavor dev --dart-define=FLAVOR=dev --target lib/main.dart
+```
+
 App Store app bundle (.ipa file) in **build/ios/ipa** folder.
 
 ### Run to get APK / AAB for Android
+
+Replace `${VersionName}` and `${VersionCode}`:
+
 ```
 	flutter clean
 	flutter pub get
-	flutter build apk --release --flavor dev --dart-define=FLAVOR=dev --target lib/main.dart
-	flutter build appbundle --flavor dev --dart-define=FLAVOR=dev --target lib/main.dart
+	flutter build apk --release --build-name=${VersionName} --build-number=${VersionCode} --flavor dev --dart-define=FLAVOR=dev --target lib/main.dart
+	flutter build appbundle  --build-name=${VersionName} --build-number=${VersionCode} --flavor dev --dart-define=FLAVOR=dev --target lib/main.dart
 ```
+
 .apk file in /build/app/outputs/apk folder.
 .aab file in /build/app/outputs/bundle/ folder.
-
 
 # 4. Build for Staging
 
