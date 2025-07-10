@@ -1,8 +1,20 @@
 import 'package:flutter_boilerplate/data/local/env_key.dart';
-import 'package:enum_to_string/enum_to_string.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 enum Flavor { dev, stag, prod }
+
+/// [Flavor]を取得します。
+Flavor get env {
+  const flavorValue = String.fromEnvironment('FLAVOR');
+  if (flavorValue == Flavor.dev.name) {
+    return Flavor.dev;
+  } else if (flavorValue == Flavor.stag.name) {
+    return Flavor.stag;
+  } else if (flavorValue == Flavor.prod.name) {
+    return Flavor.prod;
+  }
+  return Flavor.dev;
+}
 
 class Constants {
   const Constants({required this.baseUrl, required this.secretKey});
@@ -24,18 +36,9 @@ class Constants {
 }
 
 Future<void> loadEnvironmentOfFlavor() async {
-  final flavor = EnumToString.fromString(
-      Flavor.values, const String.fromEnvironment('FLAVOR'));
-  switch (flavor) {
-    case Flavor.prod:
-      await dotenv.load(fileName: ".env_prod");
-      break;
-    case Flavor.stag:
-      await dotenv.load(fileName: ".env_stag");
-      break;
-    case Flavor.dev:
-      await dotenv.load(fileName: ".env_dev");
-    default:
-      break;
-  }
+  await dotenv.load(fileName: ".env_${env.name}");
+}
+
+bool get isTestMode {
+  return env != Flavor.prod;
 }
