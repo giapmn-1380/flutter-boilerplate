@@ -43,8 +43,9 @@ A new Flutter Boilerplate.
 
 - **Multi-environment support**: dev, staging, production with separate `.env` files.
 - **Multi-language**: Easily add/edit languages via `assets/lang/`.
-- **Modern state management**: Riverpod for scalable and testable state.
-- **Flexible navigation**: GoRouter with deep link and nested navigation support.
+- **Modern state management**: Riverpod (Notifier, FutureProvider/AsyncValue) for scalable and testable state.
+- **Flexible navigation**: GoRouter with auth-based redirect — Auth stack (Login/Register) and Main stack (`StatefulShellRoute` bottom navigation with 4 tabs).
+- **API demo**: Posts tab fetches a list from a public API (jsonplaceholder.typicode.com) via Dio + repository pattern.
 - **Automatic code generation**: Freezed, Json Serializable, Flutter Gen reduce boilerplate.
 - **Centralized asset management**: Auto-generated code for assets and SVGs.
 - **Flavor build support**: Build and run app for each environment.
@@ -63,11 +64,25 @@ flutter-boilerplate/
 │   ├── lang/             # Localization files for multi-language support
 │   └── svgs/             # SVG icon assets
 ├── lib/                  # Main Dart source code
-│   ├── data/             # Data layer: API clients, repositories, models, error handling
+│   ├── config/
+│   │   ├── route/        # AppRoute enum + GoRouter (Auth stack / Main stack + auth redirect)
+│   │   └── style/        # Design tokens: colors, text styles, spacing, shapes
+│   ├── data/
+│   │   ├── local/        # Env keys, SharedPreferences keys
+│   │   ├── models/       # Freezed + json_serializable models
+│   │   ├── remote/       # Dio client
+│   │   └── repositories/ # Repository interfaces + implementations (throw AppException)
 │   ├── gen/              # Auto-generated code (assets, SVGs, etc. by FlutterGen)
-│   ├── ui/               # UI layer: widgets, screens, themes, common components
-│   ├── view_models/      # State management (Riverpod providers, logic controllers)
+│   ├── ui/
+│   │   ├── screens/
+│   │   │   ├── auth/     # AuthStack: Login, Register
+│   │   │   ├── main/     # MainStack: MainScreen (bottom nav) + 4 tabs
+│   │   │   └── splash/   # Splash while restoring session
+│   │   └── widgets/      # Reusable widgets (AppTextField, PrimaryButton, AsyncValueWidget, dialog...)
+│   ├── utils/            # Constants (flavor/env), validators
+│   ├── view_models/      # State management (Riverpod providers/notifiers)
 │   └── main.dart         # App entry point
+├── test/                 # Unit tests (models, error mapping)
 ├── docs/                 # Documentation, guides, images, and videos for onboarding
 ├── .env_dev              # Environment variables for development
 ├── .env_stag             # Environment variables for staging
@@ -84,9 +99,11 @@ flutter-boilerplate/
   Content .env sample:
 
 ```
-BASE_URL=https://api.test
+BASE_URL=https://jsonplaceholder.typicode.com
 SECRET_KEY=xxxxxxx
 ```
+
+Note: The Posts tab demo fetches data from `https://jsonplaceholder.typicode.com`, so keep that as `BASE_URL` unless you replace the demo API.
 
 # Install environment:
 

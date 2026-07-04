@@ -9,8 +9,6 @@ extension PreferenceKeyEx on PreferenceKey {
     switch (this) {
       case PreferenceKey.hasLogin:
         return "has_login";
-      default:
-        return "";
     }
   }
 

@@ -1,5 +1,27 @@
 {
   "hello": "Xin chào",
+  "welcome": "Chào mừng đến với Flutter Boilerplate",
+  "home": "Trang chủ",
+  "posts": "Bài viết",
+  "settings": "Cài đặt",
+  "profile": "Cá nhân",
+  "login": "Đăng nhập",
+  "register": "Đăng ký",
   "logout": "Đăng xuất",
-  "home": "Trang chủ"
+  "logout_confirm": "Bạn có chắc muốn đăng xuất?",
+  "email": "Email",
+  "password": "Mật khẩu",
+  "confirm_password": "Xác nhận mật khẩu",
+  "no_account_yet": "Chưa có tài khoản? Đăng ký",
+  "invalid_email": "Địa chỉ email không hợp lệ",
+  "password_too_short": "Mật khẩu phải có ít nhất 6 ký tự",
+  "password_not_match": "Mật khẩu không khớp",
+  "login_failed": "Đăng nhập thất bại. Vui lòng thử lại.",
+  "register_failed": "Đăng ký thất bại. Vui lòng thử lại.",
+  "language": "Ngôn ngữ",
+  "ok": "OK",
+  "cancel": "Hủy",
+  "retry": "Thử lại",
+  "error_occurred": "Đã xảy ra lỗi",
+  "no_internet": "Không có kết nối mạng"
 }

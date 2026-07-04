@@ -24,7 +24,7 @@
           "--flavor",
           "stag",
           "--dart-define",
-          "FLAVOR=dev",
+          "FLAVOR=stag",
           "--target",
           "lib/main.dart"
         ]
@@ -38,7 +38,7 @@
           "--flavor",
           "prod",
           "--dart-define",
-          "FLAVOR=dev",
+          "FLAVOR=prod",
           "--target",
           "lib/main.dart"
         ]

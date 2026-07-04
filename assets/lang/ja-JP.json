@@ -1,5 +1,27 @@
 {
   "hello": "こんにちは",
+  "welcome": "Flutter Boilerplateへようこそ",
+  "home": "ホーム",
+  "posts": "投稿",
+  "settings": "設定",
+  "profile": "プロフィール",
+  "login": "ログイン",
+  "register": "新規登録",
   "logout": "ログアウト",
-  "home": "Home"
+  "logout_confirm": "ログアウトしてもよろしいですか？",
+  "email": "メールアドレス",
+  "password": "パスワード",
+  "confirm_password": "パスワード（確認）",
+  "no_account_yet": "アカウントをお持ちでない方は新規登録",
+  "invalid_email": "メールアドレスが正しくありません",
+  "password_too_short": "パスワードは6文字以上で入力してください",
+  "password_not_match": "パスワードが一致しません",
+  "login_failed": "ログインに失敗しました。もう一度お試しください。",
+  "register_failed": "登録に失敗しました。もう一度お試しください。",
+  "language": "言語",
+  "ok": "OK",
+  "cancel": "キャンセル",
+  "retry": "再試行",
+  "error_occurred": "エラーが発生しました",
+  "no_internet": "インターネットに接続されていません"
 }

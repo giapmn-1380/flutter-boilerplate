@@ -1,9 +1,9 @@
-import 'package:flutter_boilerplate/config/route/app_route.dart';
-import 'package:flutter_boilerplate/config/style/custom_color.dart';
-import 'package:flutter_boilerplate/utils/constants.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_boilerplate/config/route/app_router.dart';
+import 'package:flutter_boilerplate/config/style/custom_color.dart';
+import 'package:flutter_boilerplate/utils/constants.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -27,11 +27,13 @@ void main() async {
   ));
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends ConsumerWidget {
   const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final router = ref.watch(routerProvider);
+
     return ScreenUtilInit(
       designSize: const Size(375, 734),
       minTextAdapt: true,
@@ -45,7 +47,7 @@ class MyApp extends StatelessWidget {
                 ColorScheme.fromSeed(seedColor: CustomColor.colorPrimary),
             useMaterial3: true,
           ),
-          routerConfig: AppRouter.router,
+          routerConfig: router,
           locale: context.locale,
           supportedLocales: context.supportedLocales,
           localizationsDelegates: context.localizationDelegates,
