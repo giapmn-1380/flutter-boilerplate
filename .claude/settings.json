@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(flutter analyze *)",
+      "Bash(flutter test *)",
+      "Bash(flutter pub get *)",
+      "Bash(flutter pub run build_runner *)",
+      "Bash(flutter doctor *)",
+      "Bash(flutter devices *)",
+      "Bash(dart run custom_lint *)",
+      "Bash(make freezed)",
+      "Bash(make br)",
+      "Bash(make fluttergen)"
+    ]
+  }
+}

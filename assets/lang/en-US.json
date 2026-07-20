@@ -1,5 +1,27 @@
 {
   "hello": "Hello",
+  "welcome": "Welcome to Flutter Boilerplate",
+  "home": "Home",
+  "posts": "Posts",
+  "settings": "Settings",
+  "profile": "Profile",
+  "login": "Login",
+  "register": "Register",
   "logout": "Logout",
-  "home": "Home"
+  "logout_confirm": "Are you sure you want to logout?",
+  "email": "Email",
+  "password": "Password",
+  "confirm_password": "Confirm password",
+  "no_account_yet": "Don't have an account? Register",
+  "invalid_email": "Invalid email address",
+  "password_too_short": "Password must be at least 6 characters",
+  "password_not_match": "Passwords do not match",
+  "login_failed": "Login failed. Please try again.",
+  "register_failed": "Registration failed. Please try again.",
+  "language": "Language",
+  "ok": "OK",
+  "cancel": "Cancel",
+  "retry": "Retry",
+  "error_occurred": "Something went wrong",
+  "no_internet": "No internet connection"
 }

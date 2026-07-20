@@ -27,7 +27,7 @@ class CustomColor {
 
   // materialColor
   static MaterialColor white = MaterialColor(
-    Colors.white.value,
+    Colors.white.toARGB32(),
     const <int, Color>{
       50: Colors.white,
       100: Colors.white,

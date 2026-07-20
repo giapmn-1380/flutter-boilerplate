@@ -31,7 +31,7 @@ class CustomShape {
   );
 
   static final boxShadowRadius1 = BoxShadow(
-    color: CustomColor.shadow.withOpacity(0.06),
+    color: CustomColor.shadow.withValues(alpha: 0.06),
     blurRadius: 6,
     offset: const Offset(0, 1),
   );
